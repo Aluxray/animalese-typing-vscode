@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "animalese-typing-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "animalese-typing-vscode.animalese",
+        "title": "Animalese Typing"
       }
     ]
   },

@@ -56,14 +56,11 @@ function playSound({filename, isSfx = false, isMale = false}: {filename: string,
 }
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Extension loaded!');
-    
-	const disposable = vscode.commands.registerCommand('animalese-typing-vscode.helloWorld', () => {
-        const soundPath = path.join(__dirname, '..', 'assets', 'audio', 'animalese', 'female', 'voice_1', 'a.aac');
-        play(soundPath).catch((error: unknown) => {
-            console.error('Failed to play sound:', error);
+	const disposable = vscode.commands.registerCommand('animalese-typing-vscode.animalese', () => {
+        playSound({
+            filename: 'Deska'
         });
-        vscode.window.showInformationMessage(`Hello World "${soundPath}"!`);
+        vscode.window.showInformationMessage(`Extension loaded successfully!`);
 	});
 
 	const sound = vscode.workspace.onDidChangeTextDocument((event) => {

@@ -17,6 +17,13 @@
         "command": "animalese-typing-vscode.animalese",
         "title": "Animalese Typing"
       }
+    ],
+    "keybindings":[
+      {
+        "command": "animalese-typing-vscode.animalese",
+        "key": "ctrl+alt+a",
+        "mac": "shift+cmd+a"
+      }
     ]
   },
   "scripts": {

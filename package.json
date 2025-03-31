@@ -18,7 +18,7 @@
         "title": "Animalese Typing"
       }
     ],
-    "keybindings":[
+    "keybindings": [
       {
         "command": "animalese-typing-vscode.animalese",
         "key": "ctrl+alt+a",
@@ -48,7 +48,6 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "play-sound": "^1.1.6",
-    "sound-play": "^1.1.0"
+    "play-sound": "^1.1.6"
   }
 }

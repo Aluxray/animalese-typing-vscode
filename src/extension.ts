@@ -1,7 +1,6 @@
 import path from 'path';
 import * as vscode from 'vscode';
-import { play } from 'sound-play';
-import util from 'util';
+import player from 'play-sound';
 
 const SFX = new Map<string, string>([
     ['\t', 'tab'],
@@ -44,14 +43,16 @@ function playSound({filename, isSfx = false, isMale = false}: {filename: string,
 
     let soundPath: string = '';
     if (isSfx === true) {
-        soundPath = path.join(__dirname, '..', 'assets', 'audio', folder, filename + '.aac');
+        soundPath = path.join(__dirname, '..', 'assets', 'audio', folder, filename + '.wav');
     } else {
-        soundPath = path.join(__dirname, '..', 'assets', 'audio', folder, isMale ? 'male' : 'female', 'voice_1', filename + '.aac');
+        soundPath = path.join(__dirname, '..', 'assets', 'audio', folder, isMale ? 'male' : 'female', 'voice_1', filename + '.wav');
     }
 
     console.log(`Played sound ${soundPath}`);
-    play(soundPath).catch((error: unknown) => {
-        console.error('Failed to play sound:', error);
+    player().play(soundPath, (error: unknown) => {
+        if (error) {
+            console.error('Failed to play sound:', error);
+        }
     });
 }
 
